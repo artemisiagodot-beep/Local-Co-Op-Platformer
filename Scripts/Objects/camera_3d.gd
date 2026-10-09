@@ -35,3 +35,13 @@ func _on_frame_6_body_entered(body: Node3D) -> void:
 func _on_frame_7_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player1"):
 		position = camera_positions[7]
+
+
+func _on_frame_8_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player1"):
+		position = camera_positions[8]
+
+
+func _on_frame_9_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player1"):
+		position = camera_positions[9]
