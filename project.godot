@@ -15,6 +15,10 @@ run/main_scene="uid://bqht1uypnixye"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+StageManager="*uid://cfrmf2ioqdl7d"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -23,7 +27,6 @@ window/stretch/aspect="expand"
 [global_group]
 
 player1=""
-player2=""
 
 [input]
 

@@ -5,6 +5,12 @@ const JUMP_VELOCITY = 20
 @onready var anim_tree: AnimationTree = $AnimationTree
 @onready var anim_state: AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback" )
 
+
+var take_off_height: float
+var peak_height: float
+var land_height: float
+var recorded_elevation : float
+var was_on_floor := true
 var state: String = "Idle"
 
 func _ready() -> void:
@@ -31,10 +37,15 @@ func _physics_process(delta: float) -> void:
 		new_state = "Jump"
 		velocity.y = JUMP_VELOCITY
 	elif not is_on_floor():
+		take_off_height = global_position.y
 		new_state = "Jump"
 	elif is_on_floor():
 		if state == "Jump":
+			land_height = global_position.y
+			recorded_elevation = land_height - take_off_height
+			print(recorded_elevation)
 			new_state = "Land"
+			
 		if abs(input_dir) > 0.1:
 			new_state = "Walk"
 		else:
