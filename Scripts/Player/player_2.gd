@@ -20,6 +20,8 @@ func _physics_process(delta: float) -> void:
 
 	var input_dir := Input.get_action_strength("player_2_right") - Input.get_action_strength("player_2_left")
 	velocity.x = input_dir * SPEED
+	velocity.z = 0
+	position.z = 1.5
 	move_and_slide()
 	
 	if input_dir != 0:
